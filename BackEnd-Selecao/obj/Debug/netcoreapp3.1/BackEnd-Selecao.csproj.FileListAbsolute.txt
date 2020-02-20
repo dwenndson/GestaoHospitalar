@@ -1,0 +1,10 @@
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\bin\Debug\netcoreapp3.1\BackEnd-Selecao.exe
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\obj\Debug\netcoreapp3.1\BackEnd-Selecao.csprojAssemblyReference.cache
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\obj\Debug\netcoreapp3.1\staticwebassets\BackEnd-Selecao.StaticWebAssets.Manifest.cache
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\obj\Debug\netcoreapp3.1\staticwebassets\BackEnd-Selecao.StaticWebAssets.xml
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\obj\Debug\netcoreapp3.1\BackEnd-Selecao.AssemblyInfoInputs.cache
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\obj\Debug\netcoreapp3.1\BackEnd-Selecao.AssemblyInfo.cs
+C:\Users\rebec\source\repos\BackEnd-Selecao\BackEnd-Selecao\obj\Debug\netcoreapp3.1\BackEnd-Selecao.RazorTargetAssemblyInfo.cache
