@@ -6,7 +6,7 @@ using BackEnd_Selecao.Models;
 
 namespace BackEnd_Selecao.Repository
 {
-    interface IEnfermeirosRepository : IGenericsRepository <Enfermeiro>
+    public interface IEnfermeirosRepository : IGenericsRepository <Enfermeiro>
     {
         Enfermeiro GetByCpf(string Cpf);
     }

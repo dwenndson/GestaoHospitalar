@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd_Selecao.Repository
 {
-    interface IGenericsRepository<T>
+    public interface IGenericsRepository<T>
     {
         List<T> GetAll();
         T Save(T t);

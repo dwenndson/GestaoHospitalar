@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BackEnd_Selecao.DataBase;
-using BackEnd_Selecao.Models;
+﻿using BackEnd_Selecao.Models;
+using BackEnd_Selecao.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Net.Mime;
 
 namespace BackEnd_Selecao.Controllers
 {
@@ -14,25 +10,45 @@ namespace BackEnd_Selecao.Controllers
     [ApiController]
     public class EnfermeiroController : ControllerBase
     {
-        private readonly Contexto _contexto;
+        private readonly IEnfermeirosRepository _enfermeirosRepository;
 
-        public EnfermeiroController(Contexto contexto) => _contexto = contexto;
-
+        public EnfermeiroController(IEnfermeirosRepository enfermeirosRepository)
+        {
+            _enfermeirosRepository = enfermeirosRepository;
+        }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Enfermeiro>>> GetAll()
+        public IActionResult GetAll()
         {
-            return await _contexto.Enfermeiros.ToListAsync();
+            return new ObjectResult(_enfermeirosRepository.GetAll());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name ="GetByCpf")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult GetById([FromRoute] string Cpf) 
+        public IActionResult GetByCpf([FromRoute] string Cpf) 
         {
-
-            return new NotFoundResult();
+            var cpf = _enfermeirosRepository.GetByCpf(Cpf);
+            if (cpf == null)
+            {
+                return new BadRequestResult();
+            }
+            return new OkObjectResult(cpf);
         }
         
+        [HttpPost(Name ="PostEnfermeiro")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult Save([FromBody]Enfermeiro enfermeiro)
+        {
+            Enfermeiro SaveEnfermero = _enfermeirosRepository.Save(enfermeiro);
+            if (ModelState.IsValid)
+            {
+                _enfermeirosRepository.Save(SaveEnfermero);
+                return new OkObjectResult(SaveEnfermero);
+            }
+            return new BadRequestObjectResult(SaveEnfermero);
+        }
+
     }
 }

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rebec\\source\\repos\\BackEnd-Selecao\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {}
+    "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rebec\\source\\repos\\BackEnd-Selecao\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {
+    "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rebec\\source\\repos\\BackEnd-Selecao\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
+        "projectUniqueName": "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
         "projectName": "BackEnd-Selecao",
-        "projectPath": "C:\\Users\\rebec\\source\\repos\\BackEnd-Selecao\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
-        "packagesPath": "C:\\Users\\rebec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rebec\\source\\repos\\BackEnd-Selecao\\BackEnd-Selecao\\obj\\",
+        "projectPath": "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
+        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rebec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
