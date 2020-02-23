@@ -10,6 +10,6 @@ namespace BackEnd_Selecao.Repository
         List<T> GetAll();
         T Save(T t);
         T Update(T t);
-        void Delete(T t);
+        void Delete(string t);
     }
 }

@@ -31,7 +31,7 @@ namespace BackEnd_Selecao.Controllers
             var cpf = _enfermeirosRepository.GetByCpf(Cpf);
             if (cpf == null)
             {
-                return new BadRequestResult();
+                return new NotFoundResult();
             }
             return new OkObjectResult(cpf);
         }
@@ -50,5 +50,21 @@ namespace BackEnd_Selecao.Controllers
             return new BadRequestObjectResult(SaveEnfermero);
         }
 
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
+        public IActionResult Update([FromBody] Enfermeiro enfermeiro)
+        {
+            Enfermeiro UpdateEnfermeiro = _enfermeirosRepository.Update(enfermeiro);
+            return new OkObjectResult(UpdateEnfermeiro);
+        }
+        [HttpDelete("cpf")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult Delete([FromRoute] string Cpf)
+        {
+            _enfermeirosRepository.Delete(Cpf);
+            return new NoContentResult();
+        }
     }
 }
