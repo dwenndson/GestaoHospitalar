@@ -37,9 +37,9 @@ namespace BackEnd_Selecao.Repository.Implements
             return En;
         }
 
-        public void Delete(Enfermeiro En)
+        public void Delete(String Cpf)
         {
-            Enfermeiro enfermeiro = this._context.Enfermeiros.Find(En.Cpf);
+            Enfermeiro enfermeiro = this._context.Enfermeiros.Find(Cpf);
             this._context.Enfermeiros.Remove(enfermeiro);
         }
 
