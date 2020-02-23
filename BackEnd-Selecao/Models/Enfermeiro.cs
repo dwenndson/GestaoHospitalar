@@ -11,17 +11,15 @@ namespace BackEnd_Selecao.Models
     {   
         [Key]
         [Required(ErrorMessage ="Campo Obrigatório")]
-        [RegularExpression(@"(\d{3}\.\d{3}\.\d{3}\-\d{2}")]
-        public string Cpf { get; set; }
+        public int Coren { get; set; }
         [MaxLength(60, ErrorMessage ="Valor Maximo é 60 caracteres")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public int Coren { get; set; }
+        [RegularExpression(@"(\d{3}\.\d{3}\.\d{3}\-\d{2}")]
+        public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
         [ForeignKey("Hospital")]
         public string IdHospital => Hospital.Cnpj;
-
-        [Required(ErrorMessage = "Campo Obrigatório")]
         public Hospital Hospital { get; set; }
         public bool Active { get; internal set; }
     }

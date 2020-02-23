@@ -44,6 +44,7 @@ namespace BackEnd_Selecao.Controllers
             Enfermeiro SaveEnfermero = _enfermeirosRepository.Save(enfermeiro);
             if (ModelState.IsValid)
             {
+                SaveEnfermero.Active = true;
                 _enfermeirosRepository.Save(SaveEnfermero);
                 return new OkObjectResult(SaveEnfermero);
             }

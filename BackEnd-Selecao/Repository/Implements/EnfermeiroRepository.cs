@@ -7,7 +7,7 @@ using BackEnd_Selecao.Models;
 
 namespace BackEnd_Selecao.Repository.Implements
 {
-    public class EnfermeiroRepository : IGenericsRepository<Enfermeiro>
+    public class EnfermeiroRepository : IEnfermeirosRepository
     {
         private readonly Contexto _context;
         public EnfermeiroRepository(Contexto contexto) => _context = contexto;
