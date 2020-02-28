@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd_Selecao.Models
 {
+    //Modelo de Enfermeiro com todos os dados 
     public class Enfermeiro
     {   
         [Key]
