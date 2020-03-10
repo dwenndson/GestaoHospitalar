@@ -6,8 +6,8 @@ using System.Net.Mime;
 
 namespace BackEnd_Selecao.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class EnfermeiroController : ControllerBase
     {
         private readonly IEnfermeirosRepository _enfermeirosRepository;
@@ -16,7 +16,9 @@ namespace BackEnd_Selecao.Controllers
         {
             _enfermeirosRepository = enfermeirosRepository;
         }
+
         [HttpGet]
+        [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetAll()
         {
@@ -24,6 +26,7 @@ namespace BackEnd_Selecao.Controllers
         }
 
         [HttpGet("{id}", Name ="GetByCpf")]
+        [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetByCpf([FromRoute] string Cpf) 
@@ -37,6 +40,7 @@ namespace BackEnd_Selecao.Controllers
         }
         
         [HttpPost(Name ="PostEnfermeiro")]
+        [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult Save([FromBody]Enfermeiro enfermeiro)
@@ -53,6 +57,7 @@ namespace BackEnd_Selecao.Controllers
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
         public IActionResult Update([FromBody] Enfermeiro enfermeiro)
         {
@@ -60,6 +65,7 @@ namespace BackEnd_Selecao.Controllers
             return new OkObjectResult(UpdateEnfermeiro);
         }
         [HttpDelete("cpf")]
+        [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Delete([FromRoute] string Cpf)

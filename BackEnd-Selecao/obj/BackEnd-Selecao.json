@@ -1,0 +1,291 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Gestão Enfermeiro minha API ${VersionName}",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Enfermeiro": {
+      "get": {
+        "tags": [
+          "Enfermeiro"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Enfermeiro"
+        ],
+        "operationId": "PostEnfermeiro",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Enfermeiro"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Enfermeiro"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Enfermeiro"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "406": {
+            "description": "Not Acceptable",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Enfermeiro/{id}": {
+      "get": {
+        "tags": [
+          "Enfermeiro"
+        ],
+        "operationId": "GetByCpf",
+        "parameters": [
+          {
+            "name": "Cpf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Enfermeiro/cpf": {
+      "delete": {
+        "tags": [
+          "Enfermeiro"
+        ],
+        "parameters": [
+          {
+            "name": "Cpf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Hospital": {
+        "type": "object",
+        "properties": {
+          "cnpj": {
+            "pattern": "\\d{2}\\.\\d{3}\\.\\d{3}\\/\\d{4}\\-\\d{2}",
+            "type": "string",
+            "nullable": true
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "pattern": "^(RUA|Rua|R.|AVENIDA|Avenida|AV.|TRAVESSA|Travessa|TRAV.|Trav.) ([a-zA-Z_\\s]+)[, ]+(\\d+)\\s?([-/\\da-zDA-Z\\\\ ]+)?$",
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Enfermeiro": {
+        "required": [
+          "coren",
+          "cpf"
+        ],
+        "type": "object",
+        "properties": {
+          "coren": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "maxLength": 60,
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "pattern": "(\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}",
+            "type": "string"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "idHospital": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "hospital": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Hospital"
+              }
+            ],
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

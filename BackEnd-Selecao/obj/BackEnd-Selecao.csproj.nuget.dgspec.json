@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {}
+    "C:\\Users\\rebec\\source\\repos\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {
+    "C:\\Users\\rebec\\source\\repos\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
+        "projectUniqueName": "C:\\Users\\rebec\\source\\repos\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
         "projectName": "BackEnd-Selecao",
-        "projectPath": "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
-        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diego\\projects\\GestaoHospitalar\\BackEnd-Selecao\\obj\\",
+        "projectPath": "C:\\Users\\rebec\\source\\repos\\GestaoHospitalar\\BackEnd-Selecao\\BackEnd-Selecao.csproj",
+        "packagesPath": "C:\\Users\\rebec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rebec\\source\\repos\\GestaoHospitalar\\BackEnd-Selecao\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rebec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,7 +43,27 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.ApiDescription.Server": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -65,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
