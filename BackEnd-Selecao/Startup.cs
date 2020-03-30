@@ -26,12 +26,12 @@ namespace BackEnd_Selecao
            
             services.AddDbContext<Contexto>(opt => opt.UseInMemoryDatabase("ContextList"));
             services.AddControllers();
-            services.AddScoped<IEnfermeirosRepository, EnfermeiroRepository>();
+            services.AddTransient<IEnfermeirosRepository, EnfermeiroRepository>();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { 
-                    Title = "Gest„o Enfermeiro minha API", Version = "v1" });
+                    Title = "Gest√£o Enfermeiro minha API", Version = "v1" });
             });
 
         }
